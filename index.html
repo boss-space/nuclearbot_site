@@ -116,8 +116,6 @@ body{font-family: Roboto;}blockquote{border-color: #4ea2e3;}div[submit-success] 
 <script type="text/discourse-plugin" version="0.8">
 const { h } = require('virtual-dom');
 const { iconNode } = require("discourse-common/lib/icon-library");
-const user = Discourse.User.current();
-   if (user !== null) {
 
 api.createWidget('discord-chat-menu', {
   tagName: 'div.discord-panel',
@@ -125,7 +123,7 @@ api.createWidget('discord-chat-menu', {
   html() {
     return this.attach('menu-panel', {
       contents: () => h('iframe', {
-                        "src": 'https://discord.com/widget?id=771302599038992434&theme=dark',
+                        "src": 'https://discordapp.com/widget?id=771302599038992434&theme=light',
                         "width": "350",
                         "height": "500",
                         "allowtransparency": "true",
@@ -141,7 +139,6 @@ api.createWidget('discord-chat-menu', {
     this.sendWidgetAction('toggleDiscordChat');
   }
 });
-
     
 api.decorateWidget('header-icons:before', function(helper) {
   const headerState = helper.widget.parentWidget.state;
@@ -162,7 +159,7 @@ api.decorateWidget('header-icons:after', function(helper) {
 
 api.attachWidgetAction('header', 'toggleDiscordChat', function() {
   this.state.discordChatVisible = !this.state.discordChatVisible;
-})};
+});
 
 </script>
 </body>
