@@ -99,7 +99,7 @@ body{font-family: Roboto;}blockquote{border-color: #4ea2e3;}div[submit-success] 
         
         <div class="mbr-section-btn align-right"><a class="btn btn-md btn-info display-4" href="index.html#top">пригласить</a></div>
     </div>
-
+<iframe src="https://discord.com/widget?id=781409504435896320&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
 </section>
 
 <section class="footer1 cid-sidOzH3xwk" id="footer1-2">
@@ -113,54 +113,6 @@ body{font-family: Roboto;}blockquote{border-color: #4ea2e3;}div[submit-success] 
             </p>
         </div>
     </div>
-<script type="text/discourse-plugin" version="0.8">
-const { h } = require('virtual-dom');
-const { iconNode } = require("discourse-common/lib/icon-library");
 
-api.createWidget('discord-chat-menu', {
-  tagName: 'div.discord-panel',
-
-  html() {
-    return this.attach('menu-panel', {
-      contents: () => h('iframe', {
-                        "src": 'https://discordapp.com/widget?id=771302599038992434&theme=light',
-                        "width": "350",
-                        "height": "500",
-                        "allowtransparency": "true",
-                        "frameborder": "0",
-                        "id": "chatwidget",
-                        "name": "chatwidget",}
-                    )
-
-    });
-  },
-
-  clickOutside() {
-    this.sendWidgetAction('toggleDiscordChat');
-  }
-});
-    
-api.decorateWidget('header-icons:before', function(helper) {
-  const headerState = helper.widget.parentWidget.state;
-  return helper.attach('header-dropdown', {
-      title: 'Discord Chat',
-      icon: 'fab-discord',
-      active: headerState.discordChatVisible,
-      action: 'toggleDiscordChat',
-    });
-});
-
-api.decorateWidget('header-icons:after', function(helper) {
-  const headerState = helper.widget.parentWidget.state;
-    if (headerState.discordChatVisible) {
-        return [helper.attach('discord-chat-menu')];
-    }
-});
-
-api.attachWidgetAction('header', 'toggleDiscordChat', function() {
-  this.state.discordChatVisible = !this.state.discordChatVisible;
-});
-
-</script>
 </body>
 </html>
